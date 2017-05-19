@@ -1,2 +1,10 @@
 .idea/*
 *.iml
+.sass-cache/*
+npm-debug.log
+node_modules/*
+
+# Generated content #
+#####################
+**/assets/style.css*
+**/assets/js/*

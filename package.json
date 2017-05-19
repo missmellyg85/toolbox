@@ -1,0 +1,27 @@
+{
+  "name": "toolbox",
+  "version": "0.0.1",
+  "description": "A collection of handy tools",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack": "^2.5.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "extract-text-webpack-plugin": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missmellyg85/toolbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/missmellyg85/toolbox/issues"
+  },
+  "homepage": "https://github.com/missmellyg85/toolbox#readme"
+}
