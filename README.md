@@ -5,4 +5,4 @@ A collection of handy tools
 open in chrome
 
 ## To compile sass to css
-$ sass --watch assets/style.scss
+$ sass --watch src/assets/style.scss
