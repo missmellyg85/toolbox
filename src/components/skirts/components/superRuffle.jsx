@@ -7,8 +7,6 @@ export default class superRuffle extends React.Component {
 		this.MARGIN_OF_ERROR = 2
 		this.state = { skirt: { length:'',waist:'',fabric:'' } }
 
-		this.renderSkirtInputForm = this.renderSkirtInputForm.bind(this)
-		this.renderResults = this.renderResults.bind(this)
 		this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}

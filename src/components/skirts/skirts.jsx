@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from "react-dom"
 
 import SuperRuffle from './components/superRuffle.jsx'
+import ThreeTier from './components/threeTier.jsx'
 
 class skirts extends React.Component {
 	constructor(props) {
@@ -10,7 +11,10 @@ class skirts extends React.Component {
 
 	render() {
 		return (
-			<SuperRuffle/>
+			<div>
+				<SuperRuffle/>
+				<ThreeTier/>
+			</div>
 		)
 	}
 }
