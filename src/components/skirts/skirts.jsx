@@ -13,6 +13,7 @@ class skirts extends React.Component {
 		return (
 			<div>
 				<SuperRuffle/>
+				<hr/>
 				<ThreeTier/>
 			</div>
 		)

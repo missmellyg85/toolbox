@@ -51,7 +51,7 @@ export default class superRuffle extends React.Component {
 	}
 
 	renderResults() {
-		if(this.state.results) {
+		if(this.state.results && this.state.results.length > 0) {
 			return (
 				<table>
 					<thead>
@@ -74,6 +74,8 @@ export default class superRuffle extends React.Component {
 					</tbody>
 				</table>
 			)
+		} else if(this.state.results && this.state.results.length == 0) {
+			return (<h3>No results</h3>)
 		}
 	}
 
