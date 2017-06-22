@@ -91,7 +91,7 @@ export default class superRuffle extends React.Component {
 		event.preventDefault();
 // x(   (2pi(x + (w/(2pi)))) / 54) + (3y)(   (2pi(x + y + (w/(2pi)))) / 54) = f
 		// simplified: ( (pi*y)/9)*( (w/(2pi))+x+y ) +( ((pi*x)/27)((w/(2pi))+x )) = f
-		this.setState({results:this.calculateY()})
+		this.setState({results: this.calculateY()})
 	}
 
 	// calculateX(){

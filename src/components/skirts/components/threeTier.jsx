@@ -8,6 +8,7 @@ export default class threeTier extends React.Component {
 
 		this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
+		this.runTest()
 	}
 
 	render() {
@@ -43,8 +44,62 @@ export default class threeTier extends React.Component {
 		)
 	}
 
-	renderResults() {
+	renderResult(result) {
+		return (
+			<div>
+				<div>
+					Waist: {result.waist}<br/>
+					Length: {result.length}<br/>
+					Yardage using largest tier: {result.yardageUsingLargestTier}<br/>
+					Yardage using actual tier: {result.yardageUsingActualTier}
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<td></td>
+							<td>Tier Length (in)</td>
+							<td>Skirt Length at Tier Bottom (in)</td>
+							<td>Tier Circumference (in)</td>
+							<td>Slices</td>
+						</tr>
+					</thead>
+					<tbody>
+						{this.renderTierRow("Tier 1", result.tier1)}
+						{this.renderTierRow("Tier 2", result.tier2)}
+						{this.renderTierRow("Tier 3", result.tier3)}
+					</tbody>
+				</table>
+				<hr/>
+			</div>
+		)
 	}
+
+	renderTierRow(text, tier){
+		return (
+			<tr>
+				<td>{text}</td>
+				<td>{tier.length}</td>
+				<td>{tier.totalLength}</td>
+				<td>{tier.circumference}</td>
+				<td>{tier.slices}</td>
+			</tr>
+		)
+	}
+
+	renderResults() {
+	    // this.setState({results:this.runTest()}) //for testing
+		if(this.state.results) {
+			return (
+				<div>
+					{this.state.results.map(result => {
+						return ( <div>{this.renderResult(result)}</div>)
+					})}
+				</div>
+			)
+		}
+	}
+
+	// ====== Event Handlers ====== //
 
 	handleChange(event) {
 		const target = event.target;
@@ -58,23 +113,21 @@ export default class threeTier extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		console.log(this.state)
-		this.calculateThePieces()
+		this.setState({results: [this.calculateThePieces(this.state.skirt.waist, this.state.skirt.length)]})
 	}
 
-	// ====== maths ===== //
-	calculateThePieces() {
-		let waistLength = this.calculateWaistLength(this.state.skirt.waist)
-		let tierLengths = this.calculateTierLengths(this.state.skirt.length)
-		let tierCircumferences = this.calculateTierCircumferences(tierLengths, waistLength)
-		let tierSlices = this.calculateSlices(tierCircumferences)
-		// console.log("Waist", waistLength)
-		// console.log("Tier Lengths", tierLengths)
-		// console.log("Tier Circs", tierCircumferences)
-		// console.log("Tier Slices", tierSlices)
+	// ====== Calculation Methods ===== //
 
-		let collapse = this.collapseSlicesToTotal(tierSlices)
-		console.log("Collapse", collapse)
+	calculateThePieces(waist, length) {
+		let waistLength = this.calculateWaistLength(waist)
+		let tierRollup = this.calculateTierLengths(length)
+		tierRollup = this.calculateTierCircumferences(tierRollup, waistLength)
+		tierRollup = this.calculateSlices(tierRollup)
+		tierRollup = this.roundFabricToMostReasonableYardage(tierRollup)
+		// console.log("Collapse", tierRollup)
+		tierRollup['waist'] = waist
+		tierRollup['length'] = length
+		return tierRollup
 	}
 
 	calculateWaistLength(waistCircumference) {
@@ -104,51 +157,100 @@ export default class threeTier extends React.Component {
 		return tierSplits
 	}
 
-	calculateTierCircumferences(tierSplits, waistLength) {
-		let tierCircumferenceSplits = {}
-		for (let key of Object.keys(tierSplits)) {
-			let tierLength = parseFloat(tierSplits[key]['totalLength'])
-			tierCircumferenceSplits[key] = this.roundUpToNearestTenth((parseFloat(waistLength) + tierLength) * 2 * Math.PI)
+	calculateTierCircumferences(tierRollup, waistLength) {
+		let tierCircumferenceSplits = Object.assign({}, tierRollup)
+		for (let key of Object.keys(tierRollup)) {
+			let tierLength = parseFloat(tierRollup[key]['totalLength'])
+			tierCircumferenceSplits[key]["circumference"] = this.roundUpToNearestTenth((parseFloat(waistLength) + tierLength) * 2 * Math.PI)
 		}
 		return tierCircumferenceSplits
 	}
 
-	calculateSlices(tierCircumferenceSplits) {
+	calculateSlices(tierRollup) {
 		const sliceWidth = 54
-		let slicesPerTier = {}
-		for (let key of Object.keys(tierCircumferenceSplits)) {
-			let tierCircumference = tierCircumferenceSplits[key]
-			slicesPerTier[key] = this.roundUpToNearestTenth(tierCircumference / sliceWidth)
+		let slicesPerTier = Object.assign({}, tierRollup)
+		for (let key of Object.keys(tierRollup)) {
+			let tierCircumference = tierRollup[key]["circumference"]
+			slicesPerTier[key]["slices"] = this.roundUpToNearestTenth(tierCircumference / sliceWidth)
 
 		}
 		return slicesPerTier
 	}
 
-	collapseSlicesToTotal(slicesPerTier) {
-		const waistbandSlice = 1.0
-		let a = this.roundToNearestTenth(slicesPerTier['tier1'] - Math.floor(slicesPerTier['tier1']))
-		let b = this.roundToNearestTenth(slicesPerTier['tier2'] - Math.floor(slicesPerTier['tier2']))
-		let c = this.roundToNearestTenth(slicesPerTier['tier3'] - Math.floor(slicesPerTier['tier3']))
+	roundFabricToMostReasonableYardage(tierRollup) {
 
-		let optionDiffs = {
-			"ab": this.roundToNearestTenth(1.0 - (a + b)),
-			"ac": this.roundToNearestTenth(1.0 - (a + c)),
-			"bc": this.roundToNearestTenth(1.0 - (b + c)),
-			"abc": this.roundToNearestTenth(1.0 - (a + b + c))
-		}
-		console.log(optionDiffs)
-
-		const allowedMargin = 0.1
-		let lowest
-		for (let key of Object.keys(optionDiffs)) {
-			let opt = optionDiffs[key]
-			if(opt >= allowedMargin &&  (!lowest || (lowest && opt < lowest))) {
-				lowest = key
+		let largestTier
+		for (let key of Object.keys(tierRollup)) {
+			let tierLength = tierRollup[key]["length"]
+			if((largestTier && (tierLength > largestTier)) || (largestTier === undefined)) {
+				largestTier = tierLength
 			}
 		}
 
-		//now you know which tiers you're getting a free slice from, so calculate the total slices needed
-		//
+		let inchesOfFabricUsingLargestTier = 0
+		for (let key of Object.keys(tierRollup)) {
+			let tierLength = largestTier
+			let slices = tierRollup[key]["slices"]
+			inchesOfFabricUsingLargestTier = inchesOfFabricUsingLargestTier + (tierLength * slices)
+		}
+
+		let inchesOfFabricUsingActualTiers = 0
+		for (let key of Object.keys(tierRollup)) {
+			let tierLength = tierRollup[key]["length"]
+			let slices = tierRollup[key]["slices"]
+			inchesOfFabricUsingActualTiers = inchesOfFabricUsingActualTiers + (tierLength * slices)
+		}
+		let fabricRollup = Object.assign({}, tierRollup)
+		fabricRollup['yardageUsingLargestTier'] = this.roundToNearestTenth(inchesOfFabricUsingLargestTier/36)
+		fabricRollup['yardageUsingActualTier'] = this.roundToNearestTenth(inchesOfFabricUsingActualTiers/36)
+
+		return fabricRollup
+	}
+
+	//======= Helper Methods =======/
+
+	runTest() {
+		const sizes = [
+			{
+				'length': 40,
+				'waist': 30
+			},
+			{
+				'length': 30,
+				'waist': 40
+			},
+			{
+				'length': 35,
+				'waist': 35
+			},
+			{
+				'length': 36,
+				'waist': 50
+			},
+			{
+				'length': 30,
+				'waist': 50
+			},
+			{
+				'length': 40,
+				'waist': 50
+			},
+			{
+				'length': 45,
+				'waist': 30
+			},
+			{
+				'length': 45,
+				'waist': 50
+			}
+		]
+		let results = []
+		for(let i = 0; i < sizes.length; i++) {
+			let l = sizes[i].length
+			let w = sizes[i].waist
+			results.push(this.calculateThePieces(w, l))
+		}
+		return results
 	}
 
 	roundUpToNearestTenth(number) {
