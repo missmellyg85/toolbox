@@ -19,6 +19,7 @@ export default class threeTier extends React.Component {
 				<p>Assumptions made:</p>
 				<ul>
 					<li>Fabric is 54" wide</li>
+					<li>Zipper waist</li>
 				</ul>
 				{this.renderSkirtInputForm()}
 				{this.renderResults()}
@@ -64,6 +65,7 @@ export default class threeTier extends React.Component {
 						</tr>
 					</thead>
 					<tbody>
+						{this.renderTierRow("Waistband", result.waistband)}
 						{this.renderTierRow("Tier 1", result.tier1)}
 						{this.renderTierRow("Tier 2", result.tier2)}
 						{this.renderTierRow("Tier 3", result.tier3)}
@@ -80,7 +82,7 @@ export default class threeTier extends React.Component {
 				<td>{text}</td>
 				<td>{tier.length}</td>
 				<td>{tier.totalLength}</td>
-				<td>{tier.circumference}</td>
+				<td>{tier.circumference || "N/A"}</td>
 				<td>{tier.slices}</td>
 			</tr>
 		)
@@ -137,6 +139,7 @@ export default class threeTier extends React.Component {
 	calculateTierLengths(skirtLength) {
 		let third = Math.floor(skirtLength / 3)
 		let tierSplits = {
+			waistband: {length: 8, totalLength: 2.5},
 			tier1: {length: third, totalLength:'' },
 			tier2: {length: third, totalLength:'' },
 			tier3: {length: third, totalLength:'' }
@@ -150,7 +153,7 @@ export default class threeTier extends React.Component {
 			tierSplits['tier1']['length'] = tierSplits['tier1']['length'] + 1
 		}
 
-		tierSplits['tier1']['totalLength'] = tierSplits['tier1']['length']
+		tierSplits['tier1']['totalLength'] = tierSplits['waistband']['totalLength'] + tierSplits['tier1']['length']
 		tierSplits['tier2']['totalLength'] = tierSplits['tier1']['totalLength'] + tierSplits['tier2']['length']
 		tierSplits['tier3']['totalLength'] = tierSplits['tier2']['totalLength'] + tierSplits['tier3']['length']
 
@@ -160,8 +163,10 @@ export default class threeTier extends React.Component {
 	calculateTierCircumferences(tierRollup, waistLength) {
 		let tierCircumferenceSplits = Object.assign({}, tierRollup)
 		for (let key of Object.keys(tierRollup)) {
-			let tierLength = parseFloat(tierRollup[key]['totalLength'])
-			tierCircumferenceSplits[key]["circumference"] = this.roundUpToNearestTenth((parseFloat(waistLength) + tierLength) * 2 * Math.PI)
+			if(key != 'waistband'){
+				let tierLength = parseFloat(tierRollup[key]['totalLength'])
+				tierCircumferenceSplits[key]["circumference"] = this.roundUpToNearestTenth((parseFloat(waistLength) + tierLength) * 2 * Math.PI)
+			}
 		}
 		return tierCircumferenceSplits
 	}
@@ -170,8 +175,12 @@ export default class threeTier extends React.Component {
 		const sliceWidth = 54
 		let slicesPerTier = Object.assign({}, tierRollup)
 		for (let key of Object.keys(tierRollup)) {
-			let tierCircumference = tierRollup[key]["circumference"]
-			slicesPerTier[key]["slices"] = this.roundUpToNearestTenth(tierCircumference / sliceWidth)
+			if(key == 'waistband'){
+				slicesPerTier[key]["slices"] = 1
+			} else {
+				let tierCircumference = tierRollup[key]["circumference"]
+				slicesPerTier[key]["slices"] = this.roundUpToNearestTenth(tierCircumference / sliceWidth)
+			}
 
 		}
 		return slicesPerTier
