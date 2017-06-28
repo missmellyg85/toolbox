@@ -41,12 +41,12 @@ export default class superRuffle extends React.Component {
 					<input type="number" name="waist" value={this.state.skirt.waist} onChange={this.handleChange}/>
 				</div>
 				<div>
-					<label>Total Fabric (inches)</label>
-					<input type="number" name="fabric" value={this.state.skirt.fabric} onChange={this.handleChange}/>
+					<label>Total Fabric (yards)</label>
+					<input type="text" name="fabric" value={this.state.skirt.fabric} onChange={this.handleChange}/>
 				</div>
 				<div>
 					<label>Ruffle multiple</label>
-					<input type="number" name="ruffle" value={this.state.skirt.ruffle} onChange={this.handleChange}/>
+					<input type="text" name="ruffle" value={this.state.skirt.ruffle} onChange={this.handleChange}/>
 				</div>
 				<div>
 					<input type="submit" value="Calculate"/>
@@ -96,23 +96,11 @@ export default class superRuffle extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-// x(   (2pi(x + (w/(2pi)))) / 54) + (3y)(   (2pi(x + y + (w/(2pi)))) / 54) = f
-		// simplified: ( (pi*y)/9)*( (w/(2pi))+x+y ) +( ((pi*x)/27)((w/(2pi))+x )) = f
+		// x(   (2pi(x + (w/(2pi)))) / 54) + (ry)(   (2pi(x + y + (w/(2pi)))) / 54) = f //to easily paste into Wolfram Alpha
 		this.setState({results: this.calculateY()})
 	}
 
-	// calculateX(){
-	// 	let l = this.state.skirt.length
-	// 	let w = this.state.skirt.waist
-	// 	let f = this.state.skirt.fabric
-	// 	let results = []
-	//
-	// 	for(let i = l; i > 0; i = (i - 1)) {
-	// 		let x = - ((- mathjs.sqrt((432 * mathjs.pi * f) + mathjs.square(w) - (12 * mathjs.pi * w * mathjs.square(i)) ) + w + (6 * mathjs.pi * i)) / (4 * mathjs.pi))
-	// 		results.push({x: x, y: i})
-	// 	}
-	// 	return results
-	// }
+
 
 	calculateY(){
 		// Without allowing you to choose ruffle size
@@ -120,7 +108,7 @@ export default class superRuffle extends React.Component {
 
 		let l = parseFloat(this.state.skirt.length)
 		let w = parseFloat(this.state.skirt.waist)
-		let f = parseFloat(this.state.skirt.fabric)
+		let f = parseFloat(this.state.skirt.fabric) * 36
 		let r = parseFloat(this.state.skirt.ruffle)
 			
 		let results = []
@@ -136,38 +124,6 @@ export default class superRuffle extends React.Component {
 			let denom = (4 * mathjs.pi * r)
 
 			y = ((theSqrt - theAfterTheSqrtPartOnTop) / denom)
-			y = mathjs.round(y,1)
-
-			diff = l - (x + y)
-			if(mathjs.abs(diff) < 2 ) {
-				let arr = {
-					x: x,
-					y: y,
-					length: (mathjs.round(x, 1) + y)
-				}
-				results.push(arr)
-			}
-
-			x = x - 0.5
-		}
-
-		return results
-	}
-
-	calculateYWithoutRuffleSize(){
-		// Without allowing you to choose ruffle size
-		// ( (pi*y)/9)*( (w/(2pi))+x+y ) +( ((pi*x)/27)((w/(2pi))+x )) = f // for plugging into Wolfram alpha
-
-		let l = this.state.skirt.length
-		let w = this.state.skirt.waist
-		let f = this.state.skirt.fabric
-		let results = []
-
-		let x = l
-		let y = 0
-		let diff = 0
-		while(x && (x > y)) {
-			y = ((mathjs.sqrt(3) * mathjs.sqrt((432 * mathjs.pi * f) + (3 * mathjs.square(w)) + (4 * mathjs.pi * w * x) - (4 * mathjs.square(mathjs.pi) * mathjs.square(x)))) - (3 * w) - (6 * mathjs.pi * x)) / (12 * mathjs.pi)
 			y = mathjs.round(y,1)
 
 			diff = l - (x + y)
