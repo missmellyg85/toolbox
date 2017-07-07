@@ -93,8 +93,8 @@ export default class threeTier extends React.Component {
 		if(this.state.results) {
 			return (
 				<div>
-					{this.state.results.map(result => {
-						return ( <div>{this.renderResult(result)}</div>)
+					{this.state.results.map((result, i) => {
+						return ( <div key={i}>{this.renderResult(result)}</div>)
 					})}
 				</div>
 			)

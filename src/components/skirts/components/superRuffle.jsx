@@ -68,9 +68,9 @@ export default class superRuffle extends React.Component {
 						</tr>
 					</thead>
 					<tbody>
-						{this.state.results.map(result => {
+						{this.state.results.map((result, i) => {
 							return (
-								<tr>
+								<tr key={i}>
 									<td>{result.topHalfLength}</td>
 									<td>{result.ruffleLength}</td>
 									<td>{result.totalLength}</td>
