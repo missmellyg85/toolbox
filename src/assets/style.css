@@ -16,6 +16,25 @@ form {
       width: 200px;
       font-size: 18px; }
 
+.table-container, .results-container {
+  background-color: #EEEEEE;
+  padding: 15px; }
+  .table-container table, .results-container table {
+    background-color: white;
+    width: 60%; }
+    .table-container table, .table-container table tr, .table-container table td, .results-container table, .results-container table tr, .results-container table td {
+      border: solid black 1px;
+      border-collapse: collapse; }
+
+.results-container .stats {
+  display: grid;
+  grid-template-areas: "measurements  yardage"; }
+  .results-container .stats .measurements {
+    grid-area: measurements; }
+  .results-container .stats .yardage {
+    grid-area: yardage;
+    font-weight: bold; }
+
 * {
   font-family: 'Quicksand', sans-serif; }
 
@@ -26,8 +45,8 @@ h1 {
 h2, h3, h4, h5 {
   font-family: 'Inconsolata', serif; }
 
-table, tr, td {
-  border: solid black 1px;
-  border-collapse: collapse; }
+.table-container, .results-container {
+  background-color: #EEEEEE;
+  padding: 15px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+.table-container, .results-container {
+  background-color: #EEEEEE;
+  padding: 15px;
+
+  table {
+    background-color:white;
+    width:60%;
+
+    &, tr, td {
+      border: solid black 1px;
+      border-collapse: collapse;
+    }
+  }
+}

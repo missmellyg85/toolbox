@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata|Pacifico|Quicksand');
 @import 'components/form';
+@import 'components/table';
+@import 'components/results';
+
 
 * {
   font-family: 'Quicksand', sans-serif;
@@ -14,7 +17,7 @@ h2,h3,h4,h5 {
   font-family: 'Inconsolata', serif;
 }
 
-table, tr, td {
-  border: solid black 1px;
-  border-collapse: collapse;
+.table-container, .results-container {
+  background-color: #EEEEEE;
+  padding: 15px;
 }

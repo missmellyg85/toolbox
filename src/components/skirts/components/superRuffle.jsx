@@ -5,8 +5,8 @@ export default class superRuffle extends React.Component {
 	constructor(props) {
 		super(props)
 		this.MARGIN_OF_ERROR = 2
-		this.state = { skirt: { length:'',waist:'',fabric:'', ruffle:'' } }
-		// this.state = { skirt: { length:40,waist:30,fabric:216, ruffle:3 } }
+		// this.state = { skirt: { length:'',waist:'',fabric:'', ruffle:'' } }
+		this.state = { skirt: { length:40,waist:30,fabric:6, ruffle:3 } }
 
 		this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -59,26 +59,28 @@ export default class superRuffle extends React.Component {
 	renderResults() {
 		if(this.state.results && this.state.results.length > 0) {
 			return (
-				<table>
-					<thead>
-						<tr>
-							<th>Length of top half</th>
-							<th>Length of ruffle</th>
-							<th>Total skirt length</th>
-						</tr>
-					</thead>
-					<tbody>
-						{this.state.results.map((result, i) => {
-							return (
-								<tr key={i}>
-									<td>{result.topHalfLength}</td>
-									<td>{result.ruffleLength}</td>
-									<td>{result.totalLength}</td>
-								</tr>
-							)
-						})}
-					</tbody>
-				</table>
+				<div className="table-container">
+					<table>
+						<thead>
+							<tr>
+								<th>Length of top half</th>
+								<th>Length of ruffle</th>
+								<th>Total skirt length</th>
+							</tr>
+						</thead>
+						<tbody>
+							{this.state.results.map((result, i) => {
+								return (
+									<tr key={i}>
+										<td>{result.topHalfLength}</td>
+										<td>{result.ruffleLength}</td>
+										<td>{result.totalLength}</td>
+									</tr>
+								)
+							})}
+						</tbody>
+					</table>
+				</div>
 			)
 		} else if(this.state.results && this.state.results.length == 0) {
 			return (<h3>No results</h3>)

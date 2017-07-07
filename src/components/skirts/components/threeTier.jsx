@@ -47,12 +47,16 @@ export default class threeTier extends React.Component {
 
 	renderResult(result) {
 		return (
-			<div>
-				<div>
-					Waist: {result.waist}<br/>
-					Length: {result.length}<br/>
-					Yardage using largest tier: {result.yardageUsingLargestTier}<br/>
-					Yardage using actual tier: {result.yardageUsingActualTier}
+			<div className="results-container">
+				<div className="stats">
+					<div className="measurements">
+						Waist: {result.waist}<br/>
+						Length: {result.length}
+					</div>
+					<div className="yardage">
+						Yardage using largest tier: {result.yardageUsingLargestTier}<br/>
+						Yardage using actual tier: {result.yardageUsingActualTier}
+					</div>
 				</div>
 				<table>
 					<thead>
