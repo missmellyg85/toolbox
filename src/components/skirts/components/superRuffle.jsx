@@ -21,6 +21,7 @@ export default class superRuffle extends React.Component {
 				<p>Assumptions made:</p>
 				<ul>
 					<li>Fabric is 54" wide</li>
+					<li>Waist is either real waist for zipper, or width at hips for sash. Expect extra fabric needed for sash waist.</li>
 					<li>Allowed give/take on length is: {this.MARGIN_OF_ERROR} inches</li>
 				</ul>
 				{this.renderSkirtInputForm()}
@@ -70,9 +71,9 @@ export default class superRuffle extends React.Component {
 						{this.state.results.map(result => {
 							return (
 								<tr>
-									<td>{result.x}</td>
-									<td>{result.y}</td>
-									<td>{result.length}</td>
+									<td>{result.topHalfLength}</td>
+									<td>{result.ruffleLength}</td>
+									<td>{result.totalLength}</td>
 								</tr>
 							)
 						})}
@@ -100,43 +101,41 @@ export default class superRuffle extends React.Component {
 		this.setState({results: this.calculateY()})
 	}
 
-
-
 	calculateY(){
 		// Without allowing you to choose ruffle size
 		// ( (pi*y)/9)*( (w/(2pi))+x+y ) +( ((pi*x)/27)((w/(2pi))+x )) = f // for plugging into Wolfram alpha
 
-		let l = parseFloat(this.state.skirt.length)
-		let w = parseFloat(this.state.skirt.waist)
-		let f = parseFloat(this.state.skirt.fabric) * 36
-		let r = parseFloat(this.state.skirt.ruffle)
+		let totalSkirtLength = parseFloat(this.state.skirt.length)
+		let waistSize = parseFloat(this.state.skirt.waist)
+		let fabricAmount = parseFloat(this.state.skirt.fabric) * 36
+		let fabricAmountLessWaistband = fabricAmount - 7 // assume waistbands are never > 54", so take a whole strip of 7" wide
+		let ruffleFactor = parseFloat(this.state.skirt.ruffle)
 			
 		let results = []
 
-		let x = l
-		let y = 0
+		let topHalfLength = totalSkirtLength
+		let ruffleLength = 0
 		let diff = 0
-		while(x && (x > y)) {
-			let theSqrt = mathjs.sqrt( r * ( (432 * mathjs.pi * f) + ( (w + (2 * mathjs.pi * x)) * ((r * w) + (2 * mathjs.pi * r * x) - (8 * mathjs.pi * x)) ) ) )
+		while(topHalfLength && (topHalfLength > ruffleLength)) {
+			let theSqrt = mathjs.sqrt( ruffleFactor * ( (432 * mathjs.pi * fabricAmountLessWaistband) + ( (waistSize + (2 * mathjs.pi * topHalfLength)) * ((ruffleFactor * waistSize) + (2 * mathjs.pi * ruffleFactor * topHalfLength) - (8 * mathjs.pi * topHalfLength)) ) ) )
+			let theAfterTheSqrtPartOnTop =  (ruffleFactor * (waistSize + (2 * mathjs.pi * topHalfLength) ) )
 
-			let theAfterTheSqrtPartOnTop =  (r * (w + (2 * mathjs.pi * x) ) )
+			let denom = (4 * mathjs.pi * ruffleFactor)
 
-			let denom = (4 * mathjs.pi * r)
+			ruffleLength = ((theSqrt - theAfterTheSqrtPartOnTop) / denom)
+			ruffleLength = mathjs.round(ruffleLength,1)
 
-			y = ((theSqrt - theAfterTheSqrtPartOnTop) / denom)
-			y = mathjs.round(y,1)
-
-			diff = l - (x + y)
+			diff = totalSkirtLength - (topHalfLength + ruffleLength)
 			if(mathjs.abs(diff) < 2 ) {
 				let arr = {
-					x: x,
-					y: y,
-					length: (mathjs.round(x, 1) + y)
+					topHalfLength: topHalfLength,
+					ruffleLength: ruffleLength,
+					totalLength: (mathjs.round(topHalfLength, 1) + ruffleLength)
 				}
 				results.push(arr)
 			}
 
-			x = x - 0.5
+			topHalfLength = topHalfLength - 0.5
 		}
 
 		return results

@@ -19,7 +19,7 @@ export default class threeTier extends React.Component {
 				<p>Assumptions made:</p>
 				<ul>
 					<li>Fabric is 54" wide</li>
-					<li>Zipper waist</li>
+					<li>Waist is either real waist for zipper, or width at hips for sash. Expect extra fabric needed for sash waist.</li>
 				</ul>
 				{this.renderSkirtInputForm()}
 				{this.renderResults()}
