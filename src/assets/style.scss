@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Pacifico|Quicksand');
+@import 'components/form';
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  border-bottom: solid 4px black;
+}
+
+h2,h3,h4,h5 {
+  font-family: 'Inconsolata', serif;
+}
+
 table, tr, td {
   border: solid black 1px;
   border-collapse: collapse;
