@@ -46,7 +46,7 @@ export default class superRuffle extends React.Component {
 					<input type="text" name="fabric" value={this.state.skirt.fabric} onChange={this.handleChange}/>
 				</div>
 				<div>
-					<label>Ruffle multiple</label>
+					<label>Ruffle multiplier</label>
 					<input type="text" name="ruffle" value={this.state.skirt.ruffle} onChange={this.handleChange}/>
 				</div>
 				<div>
