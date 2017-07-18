@@ -12,9 +12,9 @@ class skirts extends React.Component {
 	render() {
 		return (
 			<div>
-				<SuperRuffle/>
-				<hr/>
 				<ThreeTier/>
+				<hr/>
+				<SuperRuffle/>
 			</div>
 		)
 	}
