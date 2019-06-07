@@ -13,7 +13,8 @@ var fs = require('fs');
 
 module.exports = {
 	entry: {
-		skirts: ["./src/components/skirts/skirts.jsx"]
+		skirts: ["./src/components/skirts/skirts.jsx"],
+		sewing: ["./src/components/sewing/index.jsx"]
 	},
 	output: {
 		path: path.resolve(__dirname,'src/assets/js/'),
@@ -45,6 +46,10 @@ module.exports = {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: "skirts",
 			chunks: ["skirts"]
-		})
+		}),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: "sewing",
+			chunks: ["sewing"]
+		}),
 	]
 }
