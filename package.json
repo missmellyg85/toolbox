@@ -18,7 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compileSass": "node_modules/sass/sass.js src/assets/style.scss src/assets/style.css",
-    "build:prod": "npm run compileSass && webpack"
+    "build": "npm run compileSass && webpack"
   },
   "repository": {
     "type": "git",
