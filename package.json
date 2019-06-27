@@ -4,20 +4,21 @@
   "description": "A collection of handy tools",
   "main": "webpack.config.js",
   "dependencies": {
-    "mathjs": "^3.20.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "webpack": "^2.7.0"
-  },
-  "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "extract-text-webpack-plugin": "^2.1.0"
+    "extract-text-webpack-plugin": "^3.0.2",
+    "mathjs": "^3.20.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "sass": "^1.22.1",
+    "webpack": "^2.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compileSass": "node_modules/sass/sass.js src/assets/style.scss src/assets/style.css",
+    "build:prod": "npm run compileSass && webpack"
   },
   "repository": {
     "type": "git",
