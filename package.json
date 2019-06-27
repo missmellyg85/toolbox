@@ -17,7 +17,8 @@
     "extract-text-webpack-plugin": "^2.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": " sass src/assets/style.scss:src/assets/style.css && node_modules/webpack/bin/webpack.js"
   },
   "repository": {
     "type": "git",
