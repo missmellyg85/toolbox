@@ -1,11 +1,29 @@
-# toolbox
-A collection of handy tools
+# toolbox-vue
 
-## To Run
-open in chrome
+## Project setup
+```
+npm install
+```
 
-## To compile sass to css and watch
-$ sass --watch src/assets/style.scss:src/assets/style.css
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-## To compile code and watch
-$ node_modules/webpack/bin/webpack.js -w
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

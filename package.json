@@ -1,33 +1,49 @@
 {
-  "name": "toolbox",
-  "version": "0.0.1",
-  "description": "A collection of handy tools",
-  "main": "webpack.config.js",
-  "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "mathjs": "^3.20.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "sass": "^1.22.1",
-    "webpack": "^2.7.0"
-  },
+  "name": "toolbox-vue",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compileSass": "node_modules/sass/sass.js src/assets/style.scss src/assets/style.css",
-    "build": "npm run compileSass && webpack"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/missmellyg85/toolbox.git"
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/missmellyg85/toolbox/issues"
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-template-compiler": "^2.6.10"
   },
-  "homepage": "https://github.com/missmellyg85/toolbox#readme"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
