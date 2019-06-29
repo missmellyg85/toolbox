@@ -82,8 +82,14 @@ export default {
     filteredPatterns() {
       if (this.filterText === "") return this.sewingPatterns;
 
+      const regex = new RegExp("^(" + this.filterText + ")\\w+", "ig");
+
       return this.sewingPatterns.filter(
-        p => p.tags && p.tags.includes(this.filterText.toLowerCase())
+        p =>
+          p.tags &&
+          p.tags.find(tag => {
+            return regex.exec(tag);
+          })
       );
     }
   }
