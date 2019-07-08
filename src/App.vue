@@ -82,7 +82,7 @@ export default {
     filteredPatterns() {
       if (this.filterText === "") return this.sewingPatterns;
 
-      const regex = new RegExp("^(" + this.filterText + ")\\w+", "ig");
+      const regex = new RegExp("^(" + this.filterText + ")", "ig");
 
       return this.sewingPatterns.filter(
         p =>
