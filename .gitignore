@@ -1,10 +1,12 @@
 .idea/*
+.vscode
 *.iml
 .sass-cache/*
 npm-debug.log
 node_modules/*
 .npmrc
 dist/
+server/env
 
 # Generated content #
 #####################
