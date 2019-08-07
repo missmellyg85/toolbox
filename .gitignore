@@ -3,10 +3,12 @@
 *.iml
 .sass-cache/*
 npm-debug.log
-node_modules/*
+
 .npmrc
 dist/
 server/env
+
+.DS_Store
 
 # Generated content #
 #####################
