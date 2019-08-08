@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import data from "../components/data.json";
+import axios from "axios";
 import SewingPattern from "../components/SewingPattern.vue";
 
 export default {
@@ -51,7 +51,7 @@ export default {
   },
   data() {
     return {
-      sewingPatterns: [...data],
+      sewingPatterns: [],
       filterText: "",
       defaultSort: "title",
       sort: "",
@@ -71,6 +71,18 @@ export default {
     changeDisplay(displayValue) {
       if (displayValue === this.display) return;
       this.display = displayValue;
+    },
+    getData() {
+      const path = "http://localhost:5000/patterns";
+      axios
+        .get(path)
+        .then((res) => {
+          this.sewingPatterns = res.data;
+        })
+        .catch((err) => {
+          // eslint-disable-next-line
+          console.error(err);
+        });
     }
   },
   beforeMount() {
@@ -86,6 +98,9 @@ export default {
         p => p.tags && p.tags.find(tag => regex.exec(tag))
       );
     }
+  },
+  created() {
+    this.getData();
   }
 };
 </script>
