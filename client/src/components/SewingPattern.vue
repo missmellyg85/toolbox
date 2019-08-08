@@ -34,7 +34,9 @@ export default {
     };
   },
   created() {
-    const { title, brand, tags, file, ...dataSelect } = this.patt;
+    const {
+      title, brand, tags, file, ...dataSelect
+    } = this.patt;
     this.title = title;
     this.brand = brand;
     this.tags = tags;
