@@ -1,35 +1,17 @@
 # toolbox
 
-## Project setup
+This project is a learning experience.
 
-```
-npm install
-```
+The frontend is Vue.js and the backend is Flask.
 
-### Compiles and hot-reloads for development
-
+The client can be run from the client directory.
 ```
-npm run serve
+cd client
+npm install && npm run serve
 ```
 
-### Compiles and minifies for production
-
+The server can be run from the server directory.
 ```
-npm run build
+cd server
+python app.py
 ```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
