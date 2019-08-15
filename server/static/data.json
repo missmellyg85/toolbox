@@ -1,332 +1,392 @@
 [
-  {
-    "title": "ABB Men's Tee",
-    "brand": "DIBY Club",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "abbMen",
-    "tags": ["men"]
-  },
-  {
-    "title": "ABB Women's Tee",
-    "brand": "DIBY Club",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "abbWomen"
-  },
-  {
-    "title": "Around the Block Hoodie",
-    "brand": "Ellie and Mac",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "aroundTheBlockHoodie",
-    "tags": ["hoodie"]
-  },
-  {
-    "title": "Beach Dreaming Crop Top",
-    "brand": "Ellie and Mac",
-    "format": "paper",
-    "printed": "N",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "beachDreamingCropTop"
-  },
-  {
-    "title": "Boardwalk Wrap Dress",
-    "brand": "New Horizons Designs",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "boardwalkWrapDress",
-    "tags": ["dress"]
-  },
-  {
-    "title": "Chill Tee and Hoodie",
-    "brand": "Ellie and Mac",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "chillTee",
-    "tags": ["men", "hoodie"],
-    "variants": ["tee", "hoodie"]
-  },
-  {
-    "title": "Converitble Cover",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "convertibleCover",
-    "tags": ["accessories"]
-  },
-  {
-    "title": "Cora Culottes",
-    "brand": "Made for Mermaids",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "culottes",
-    "tags": ["bottoms"]
-  },
-  {
-    "title": "Everyday Elegance Top",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "everydayElegance"
-  },
-  {
-    "title": "Favorite Tee",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "favoriteTee"
-  },
-  {
-    "title": "Grandpa Cardi",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "grandpaCardi"
-  },
-  {
-    "title": "Hudson Pant",
-    "brand": "True Bias",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "hudsonPant",
-    "tags": ["bottoms"]
-  },
-  {
-    "title": "Linen Loungers",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "linenLoungers",
-    "tags": ["bottoms"]
-  },
-  {
-    "title": "Men's Hudson Pullover",
-    "brand": "Greenstyle creations",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "hudsonPullover",
-    "tags": ["men", "hoodie"]
-  },
-  {
-    "title": "Men's Muscle Tank",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "mensMuscleTank",
-    "tags": ["men"]
-  },
-  {
-    "title": "Moxi Shorts",
-    "brand": "Greenstyle creations",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "moxiShorts",
-    "tags": ["bottoms"]
-  },
-  {
-    "title": "Moxi Shorts Compression Add-on",
-    "brand": "Greenstyle creations",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "moxiShortAddOn",
-    "tags": ["bottoms"]
-  },
-  {
-    "title": "Oasis Swimsuit Mix & Match Pattern",
-    "brand": "Ellie and Mac",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "oasisSwim",
-    "tags": ["swim"]
-  },
-  {
-    "title": "Paige Piko",
-    "brand": "Made for Mermaids",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "paigePiko"
-  },
-  {
-    "title": "Papa Bear Jogger",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "papaBearJoggers",
-    "tags": ["pants", "men"]
-  },
-  {
-    "title": "Peg Leg Add-Ons",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "peglegAddons"
-  },
-  {
-    "title": "Peg Legs",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "peglegs"
-  },
-  {
-    "title": "Pirate Pencil Skirt",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "piratePencilSkirt"
-  },
-  {
-    "title": "Slim Fit Raglan",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "slimFitRaglan"
-  },
-  {
-    "title": "South Shore Romper",
-    "brand": "Ellie and Mac",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "southShoreRomper"
-  },
-  {
-    "title": "Summer Cover Up",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "summerCoverup"
-  },
-  {
-    "title": "Sweet Tee",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "sweetTee"
-  },
-  {
-    "title": "Sweetheart Dress",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "sweetheartDress"
-  },
-  {
-    "title": "Tami Hoodie",
-    "brand": "New Horizons Designs",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "tamiHoodie"
-  },
-  {
-    "title": "Tie Back Tank",
-    "brand": "Greenstyle creations",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "tieBackTank"
-  },
-  {
-    "title": "Timeless Tunic",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "timelessTunic"
-  },
-  {
-    "title": "Tiny Tulip",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "tinyTulip"
-  },
-  {
-    "title": "Tulip Tee",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "tulipTee"
-  },
-  {
-    "title": "Walk the Plank PJs",
-    "brand": "Patterns for Pirates",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "walkThePlank"
-  },
-  {
-    "title": "Wallbrook Boxers",
-    "brand": "Greenstyle creations",
-    "format": "A0",
-    "printed": "Y",
-    "staged for print": "",
-    "sizes traced": "",
-    "file": "wallbrookBoxerBriefs"
-  }
+    {
+        "brand": "DIBY Club", 
+        "file": "abbMen", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "men"
+        ], 
+        "title": "ABB Men's Tee"
+    }, 
+    {
+        "brand": "DIBY Club", 
+        "file": "abbWomen", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "ABB Women's Tee"
+    }, 
+    {
+        "brand": "Ellie and Mac", 
+        "file": "aroundTheBlockHoodie", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "hoodie"
+        ], 
+        "title": "Around the Block Hoodie"
+    }, 
+    {
+        "brand": "Ellie and Mac", 
+        "file": "beachDreamingCropTop", 
+        "format": "paper", 
+        "printed": "N", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Beach Dreaming Crop Top"
+    }, 
+    {
+        "brand": "New Horizons Designs", 
+        "file": "boardwalkWrapDress", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "dress"
+        ], 
+        "title": "Boardwalk Wrap Dress"
+    }, 
+    {
+        "brand": "Ellie and Mac", 
+        "file": "chillTee", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "men", 
+            "hoodie"
+        ], 
+        "title": "Chill Tee and Hoodie", 
+        "variants": [
+            "tee", 
+            "hoodie"
+        ]
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "convertibleCover", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "accessories"
+        ], 
+        "title": "Converitble Cover"
+    }, 
+    {
+        "brand": "Made for Mermaids", 
+        "file": "culottes", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "bottoms"
+        ], 
+        "title": "Cora Culottes"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "everydayElegance", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Everyday Elegance Top"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "favoriteTee", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Favorite Tee"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "grandpaCardi", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Grandpa Cardi"
+    }, 
+    {
+        "brand": "True Bias", 
+        "file": "hudsonPant", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "bottoms"
+        ], 
+        "title": "Hudson Pant"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "linenLoungers", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "bottoms"
+        ], 
+        "title": "Linen Loungers"
+    }, 
+    {
+        "brand": "Greenstyle creations", 
+        "file": "hudsonPullover", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "men", 
+            "hoodie"
+        ], 
+        "title": "Men's Hudson Pullover"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "mensMuscleTank", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "men"
+        ], 
+        "title": "Men's Muscle Tank"
+    }, 
+    {
+        "brand": "Greenstyle creations", 
+        "file": "moxiShorts", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "bottoms"
+        ], 
+        "title": "Moxi Shorts"
+    }, 
+    {
+        "brand": "Greenstyle creations", 
+        "file": "moxiShortAddOn", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "bottoms"
+        ], 
+        "title": "Moxi Shorts Compression Add-on"
+    }, 
+    {
+        "brand": "Ellie and Mac", 
+        "file": "oasisSwim", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "swim"
+        ], 
+        "title": "Oasis Swimsuit Mix & Match Pattern"
+    }, 
+    {
+        "brand": "Made for Mermaids", 
+        "file": "paigePiko", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Paige Piko"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "papaBearJoggers", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "pants", 
+            "men"
+        ], 
+        "title": "Papa Bear Jogger"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "peglegAddons", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Peg Leg Add-Ons"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "peglegs", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Peg Legs"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "piratePencilSkirt", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Pirate Pencil Skirt"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "slimFitRaglan", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Slim Fit Raglan"
+    }, 
+    {
+        "brand": "Ellie and Mac", 
+        "file": "southShoreRomper", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "South Shore Romper"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "summerCoverup", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Summer Cover Up"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "sweetTee", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Sweet Tee"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "sweetheartDress", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Sweetheart Dress"
+    }, 
+    {
+        "brand": "New Horizons Designs", 
+        "file": "tamiHoodie", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Tami Hoodie"
+    }, 
+    {
+        "brand": "Greenstyle creations", 
+        "file": "tieBackTank", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Tie Back Tank"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "timelessTunic", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Timeless Tunic"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "tinyTulip", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Tiny Tulip"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "tulipTee", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Tulip Tee"
+    }, 
+    {
+        "brand": "Patterns for Pirates", 
+        "file": "walkThePlank", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Walk the Plank PJs"
+    }, 
+    {
+        "brand": "Greenstyle creations", 
+        "file": "wallbrookBoxerBriefs", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "title": "Wallbrook Boxers"
+    }, 
+    {
+        "brand": "Missy", 
+        "file": "abbMen", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "men", 
+            "missy"
+        ], 
+        "title": "Missy's Fancy Tee"
+    }, 
+    {
+        "brand": "Missy", 
+        "file": "abbMen", 
+        "format": "A0", 
+        "printed": "Y", 
+        "sizes traced": "", 
+        "staged for print": "", 
+        "tags": [
+            "men", 
+            "missy"
+        ], 
+        "title": "Missy's Fancy Tee"
+    }
 ]
