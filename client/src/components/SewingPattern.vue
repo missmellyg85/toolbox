@@ -1,5 +1,5 @@
 <template>
-  <div class="sewing-pattern" :class="{ 'detail-view': detailEnabled}">
+  <div class="sewing-pattern">
     <div class="title">
       <span>{{ patt.title }}</span>
     </div>
@@ -7,12 +7,12 @@
       <span>by {{ patt.brand }}</span>
     </div>
     <img :src="`/assets/sewingPattern/${file}.png`" />
-    <div v-if="detailEnabled" class="detail-contents">
+    <!-- <div class="detail-contents">
       <div
         v-for="(pData, pProp) in otherDatas"
         :key="pProp"
       >{{ pProp }}: {{ patternDataDisplay(pData) }}</div>
-    </div>
+    </div>-->
     <div class="tags">
       <span>tags:</span>
       <span v-for="tag in patt.tags" :key="tag" class="tag">{{ tag }}</span>
@@ -80,7 +80,9 @@ export default {
     text-align: left;
     font-size: 14px;
   }
-
+  .detail-contents {
+    display: none;
+  }
   .tags {
     text-align: left;
   }
@@ -91,17 +93,18 @@ export default {
     padding-left: 4px;
     padding-right: 4px;
   }
+}
 
-  &.detail-view {
+@media all and (max-width: 839px) {
+  .sewing-pattern {
     border-bottom: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto repeat(5, auto);
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     grid-column-gap: 16px;
     text-align: left;
 
     .title {
-      grid-column: 1 / 3;
       grid-row: 1 / 2;
       display: flex;
       span {
@@ -109,27 +112,19 @@ export default {
       }
     }
     .brand {
-      grid-column: 1 / 3;
       grid-row: 2 / 3;
       padding-bottom: 8px;
     }
     img {
-      grid-column: 1 / 2;
       grid-row: 3 / 6;
     }
     .detail-contents {
-      grid-column: 2 / 5;
-      grid-row: 3 / 5;
+      display: inherit;
+      grid-row: 6 / 7;
     }
     .tags {
-      grid-column: 2 / 5;
-      grid-row: 5 / 6;
+      grid-row: 7 / 8;
     }
   }
 }
-
-@media all and (max-width: 839px) {
-
-  
-} 
 </style>

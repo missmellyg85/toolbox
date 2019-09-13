@@ -10,26 +10,9 @@
         Sort by:
         <button @click="sortBy('title')" :class="{ 'selected-sort': sort === 'title'}">Title</button>
         <button @click="sortBy('brand')" :class="{ 'selected-sort': sort === 'brand'}">Brand</button>
-        View:
-        <button
-          @click="changeDisplay('grid')"
-          :class="{ 'selected-display': display === 'grid'}"
-        >
-          <font-awesome-icon icon="th" />
-        </button>
-
-        <button
-          @click="changeDisplay('detail')"
-          :class="{ 'selected-display': display === 'detail'}"
-        >
-          <font-awesome-icon icon="th-list" />
-        </button>
       </div>
     </div>
-    <div
-      class="sewing-patterns"
-      :class="{ 'grid-display': display === 'grid', 'detail-display': display === 'detail'}"
-    >
+    <div class="sewing-patterns">
       <SewingPattern
         v-for="p in filteredPatterns"
         :key="p.title"
@@ -69,10 +52,6 @@ export default {
       this.sewingPatterns.sort((a, b) =>
         a[sortValue] > b[sortValue] ? 1 : -1
       );
-    },
-    changeDisplay(displayValue) {
-      if (displayValue === this.display) return;
-      this.display = displayValue;
     }
   },
   beforeMount() {
@@ -120,13 +99,33 @@ export default {
   }
 }
 .sewing-patterns {
-  &.grid-display {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+button {
+  background-color: lightgray;
+}
+@media all and (max-width: 839px) {
+  #app {
+    margin-top: 10px;
   }
-  &.detail-display {
+  .filter-bar {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+
+    div:first-of-type {
+      padding-left: inherit;
+    }
+
+    button.selected-sort,
+    button.selected-display {
+      background-color: salmon;
+    }
+  }
+
+  .sewing-patterns {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
 </style>
