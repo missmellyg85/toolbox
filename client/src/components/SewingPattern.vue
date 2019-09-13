@@ -127,4 +127,9 @@ export default {
     }
   }
 }
+
+@media all and (max-width: 839px) {
+
+  
+} 
 </style>

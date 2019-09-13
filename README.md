@@ -1,29 +1,5 @@
-# toolbox-vue
+# Toolbox
 
-## Project setup
-```
-npm install
-```
+This is a tool I am using to organize the sewing patterns I own. It's hard to know what I own when I've purchased them from various online stores. This is a central place I can glance through.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+I have quite a few plans for this site. I am hoping to add CRUD functionality for the patterns, as well as some kind of tool for tracking what I've made and for whom. We'll see!
