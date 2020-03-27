@@ -8,8 +8,18 @@
       </div>
       <div>
         Sort by:
-        <button @click="sortBy('title')" :class="{ 'selected-sort': sort === 'title'}">Title</button>
-        <button @click="sortBy('brand')" :class="{ 'selected-sort': sort === 'brand'}">Brand</button>
+        <button
+          @click="sortBy('title')"
+          :class="{ 'selected-sort': sort === 'title' }"
+        >
+          Title
+        </button>
+        <button
+          @click="sortBy('brand')"
+          :class="{ 'selected-sort': sort === 'brand' }"
+        >
+          Brand
+        </button>
       </div>
     </div>
     <div class="sewing-patterns">
@@ -24,7 +34,7 @@
 </template>
 
 <script>
-import data from "./data.json";
+import axios from "axios";
 import SewingPattern from "./components/SewingPattern.vue";
 
 export default {
@@ -34,7 +44,7 @@ export default {
   },
   data() {
     return {
-      sewingPatterns: [...data],
+      sewingPatterns: [],
       filterText: "",
       defaultSort: "title",
       sort: "",
@@ -42,6 +52,16 @@ export default {
     };
   },
   methods: {
+    getData() {
+      axios
+        .get(
+          "https://friendly-knuth-6abcac.netlify.com/.netlify/functions/patterns"
+        )
+        .then(res => (this.sewingPatterns = res.data))
+        .catch(err => {
+          console.error(err);
+        });
+    },
     clearFilter() {
       this.filterText = "";
     },
@@ -56,6 +76,9 @@ export default {
   },
   beforeMount() {
     this.sortBy(this.defaultSort);
+  },
+  created() {
+    this.getData();
   },
   computed: {
     filteredPatterns() {
