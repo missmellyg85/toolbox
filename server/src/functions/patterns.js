@@ -6,8 +6,6 @@ const ALLOWED_ORIGINS = [
 ];
 
 exports.handler = (event, context, callback) => {
-  console.log("event", event);
-  console.log("context:", context);
   const allowed_origin = ALLOWED_ORIGINS.find(
     origin => origin === event.headers.origin
   );
