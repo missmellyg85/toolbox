@@ -1,3 +1,6 @@
+const path = require("path");
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
+
 module.exports = {
   devServer: {
     proxy: {
@@ -6,5 +9,12 @@ module.exports = {
         pathRewrite: { "^/.netlify/functions": "" },
       },
     },
+  },
+  configureWebpack: () => {
+    return {
+      plugins: [
+        new PrerenderSPAPlugin(path.resolve(__dirname, "dist"), ["/"], {}),
+      ],
+    };
   },
 };
