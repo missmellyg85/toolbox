@@ -2,7 +2,7 @@ import data from "./data.json";
 
 const ALLOWED_ORIGINS = [
   "http://localhost:8081",
-  "https://sad-varahamihira-696b0e.netlify.com",
+  "https://sad-varahamihira-696b0e.netlify.app",
 ];
 
 exports.handler = (event, context, callback) => {
