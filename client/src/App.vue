@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Pattern Inventory</h1>
+    <NewPatternForm></NewPatternForm>
     <div class="filter-bar">
       <div>
         <input v-model="filterText" placeholder="Search by tags" />
@@ -36,11 +37,13 @@
 <script>
 import axios from "axios";
 import SewingPattern from "./components/SewingPattern.vue";
+import NewPatternForm from "./components/NewPatternForm.vue";
 
 export default {
   name: "app",
   components: {
     SewingPattern,
+    NewPatternForm,
   },
   data() {
     return {
