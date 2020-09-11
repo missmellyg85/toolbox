@@ -55,7 +55,7 @@ export default {
     getData() {
       axios
         .get(
-          "https://friendly-knuth-6abcac.netlify.com/.netlify/functions/patterns"
+          "https://friendly-knuth-6abcac.netlify.app/.netlify/functions/patterns"
         )
         .then((res) => (this.sewingPatterns = res.data))
         .catch((err) => {
