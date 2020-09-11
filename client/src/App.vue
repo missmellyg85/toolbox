@@ -40,7 +40,7 @@ import SewingPattern from "./components/SewingPattern.vue";
 export default {
   name: "app",
   components: {
-    SewingPattern
+    SewingPattern,
   },
   data() {
     return {
@@ -48,7 +48,7 @@ export default {
       filterText: "",
       defaultSort: "title",
       sort: "",
-      display: "grid"
+      display: "grid",
     };
   },
   methods: {
@@ -57,8 +57,9 @@ export default {
         .get(
           "https://friendly-knuth-6abcac.netlify.com/.netlify/functions/patterns"
         )
-        .then(res => (this.sewingPatterns = res.data))
-        .catch(err => {
+        .then((res) => (this.sewingPatterns = res.data))
+        .catch((err) => {
+          // eslint-disable-next-line
           console.error(err);
         });
     },
@@ -72,7 +73,7 @@ export default {
       this.sewingPatterns.sort((a, b) =>
         a[sortValue] > b[sortValue] ? 1 : -1
       );
-    }
+    },
   },
   beforeMount() {
     this.sortBy(this.defaultSort);
@@ -87,14 +88,14 @@ export default {
       const regex = new RegExp("^(" + this.filterText + ")", "ig");
 
       return this.sewingPatterns.filter(
-        p =>
+        (p) =>
           p.tags &&
-          p.tags.find(tag => {
+          p.tags.find((tag) => {
             return regex.exec(tag);
           })
       );
-    }
-  }
+    },
+  },
 };
 </script>
 
