@@ -4,6 +4,8 @@ This is a tool I am using to organize the sewing patterns I own. It's hard to kn
 
 I have quite a few plans for this site. I am hoping to add CRUD functionality for the patterns, as well as some kind of tool for tracking what I've made and for whom. We'll see!
 
+You can see the current app running [here](https://sad-varahamihira-696b0e.netlify.app/)
+
 # To Run:
 
 ## client:
